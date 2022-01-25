@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { FundDataTable } from '../../components/DataTable';
+import { FundDataTable, VoteRecordDataTable } from '../../components/DataTable';
 import { Voting } from '../../models/Voting';
 
 export const DataTableContainer = () => {
@@ -27,6 +27,7 @@ export const DataTableContainer = () => {
   return (
     <>
       <FundDataTable data={data.fundList} />
+      <VoteRecordDataTable data={data.voteRecords} />
     </>
   );
 };
