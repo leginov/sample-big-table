@@ -17,13 +17,9 @@ export interface Column {
   format?: (value: number) => string;
 }
 
-interface Data {
-  [id: string]: any;
-}
-
 interface Props {
   columns: Column[];
-  data: Data[];
+  data: any[];
 }
 
 export const DataTable: React.VFC<Props> = ({ columns, data }) => {
@@ -48,7 +44,7 @@ export const DataTable: React.VFC<Props> = ({ columns, data }) => {
             <TableBody>
               {data.map((row) => {
                 return (
-                  <TableRow hover role="checkbox" tabIndex={-1} key={row.code}>
+                  <TableRow hover role="checkbox" tabIndex={-1} key={row.id}>
                     {columns.map((column) => {
                       const value = row[column.id];
                       return (
